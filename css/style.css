@@ -1,3 +1,28 @@
+:root {
+    --header-fontfamily: 'Overpass Mono', monospace;
+    --normal-fontfamily: 'Encode Sans Condensed', sans-serif;
+    --red-accent: #f75d45;
+    --green-accent: #60c4a5;
+    --blue-accent: #5e80d1;
+}
+
+/*** SCROLLBAR STYLING ***/
+::-webkit-scrollbar {
+      width: 15px;
+}
+
+::-webkit-scrollbar-track {
+      background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+      background-color: var(--red-accent);
+} /* this will style the thumb, ignoring the track */
+
+::-webkit-scrollbar-button {
+      background-color: var(--blue-accent);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -16,8 +41,12 @@ a {
     display: none;
 }
 
-img#logo{
+img#logo {
     width: 40%;
+}
+
+nav a{
+    font-family: var(--header-fontfamily);
 }
 
 @media screen and (min-width: 640px) {
@@ -28,61 +57,69 @@ img#logo{
     nav a {
         display: block;
         float: right;
+        color: white;
     }
     nav {
         display: block;
     }
-
     #logo {
         opacity: 1;
         float: left;
     }
-    img#logo{
-    width: 70%;
-}
-    .main-frame{
+    img#logo {
+        width: 70%;
+    }
+    .main-frame {
         position: relative;
     }
 }
 
 
-
 /********* ANIMATED BLINKING CURSOR***********/
 
-#frontpage_MMDtitle, #frontpage_curriculumtitle{
-  font-size: 4em;
-  margin: 10px 0 0 10px;
-  white-space: nowrap;
-  width: 30em;
-  animation: type 3s steps(60, end);
+#frontpage_MMDtitle,
+#frontpage_curriculumtitle {
+    font-size: 4em;
+    margin: 10px 0 0 10px;
+    white-space: nowrap;
+    width: 30em;
+    animation: type 3s steps(60, end);
 }
 
-#frontpage_curriculumtitle{
-  animation: type2 4s steps(70, end);
+#frontpage_curriculumtitle {
+    animation: type2 4s steps(70, end);
 }
 
-#blinking_cursor{
-  animation: blink 0.8s infinite;
+#blinking_cursor {
+    animation: blink 0.8s infinite;
 }
 
-@keyframes type{
-  from { width: 0; }
+@keyframes type {
+    from {
+        width: 0;
+    }
 }
 
-@keyframes type2{
-  0%{width: 0;}
-  50%{width: 0;}
-  100%{ width: 100; }
+@keyframes type2 {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 0;
+    }
+    100% {
+        width: 100;
+    }
 }
 
-@keyframes blink{
-  to{opacity: .0;}
+@keyframes blink {
+    to {
+        opacity: .0;
+    }
 }
 
-
-
-.main_frame{
-   display: inline-block;
+.main_frame {
+    display: inline-block;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -92,35 +129,367 @@ img#logo{
     height: 75vh;
     margin: auto;
     background-color: #303030;
-        overflow-y: scroll;
+    overflow-y: scroll;
 }
 
-
-
-#lightswitch{
+#lightswitch {
     width: 50%;
 }
 
-.main_frame{
+.main_frame {
     display: flex;
     flex-direction: row;
 }
 
-.scroll_semesters{
-    width: 60%;
-}
-.vertical-text{
+.vertical-text {
     width: 10%;
 }
-#nav_semesters{
+
+#nav_semesters {
     width: 15%;
     display: flex;
     flex-direction: column;
 }
 
 
-
-
 /****** NAV SEMESTERS ********/
 
 
+/**** DOUBLE *********/
+
+.landingpage_main {
+    width: 80%;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 50vh;
+    text-align: center;
+}
+
+body#landing_page {
+    overflow: hidden;
+    background-image: url(../img/darker.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    cursor: none;
+}
+
+.blackbackground{
+    background-image: url(../img/andrew-ridley-76547.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+main {
+    background-color: black;
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    height: 50%;
+    top: 20%;
+}
+
+.menu {
+    display: inline-flex;
+    text-align: center;
+    font-size: 2em;
+    font-family: var(--header-fontfamily);
+}
+
+span {
+    padding: 0.08em;
+    color: white;
+}
+
+.left-side {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.right-side {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.hover {
+    position: absolute;
+    float: left;
+    height: 70px;
+    width: 70px;
+    cursor: none;
+    overflow: hidden;
+}
+
+.bit-top {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 5px;
+    width: 10px;
+    background: #fff;
+}
+
+.bit-top-left {
+    position: absolute;
+    left: 0%;
+    top: 5px;
+    height: 5px;
+    width: 5px;
+    background: #fff;
+}
+
+.bit-top-right {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    height: 5px;
+    width: 10px;
+    background: #fff;
+}
+
+.bit-top-right-2 {
+    position: absolute;
+    right: 0%;
+    top: 0px;
+    height: 10px;
+    width: 5px;
+    background: #fff;
+}
+
+.bit-bottom-left {
+    position: absolute;
+    bottom: 0%;
+    left: 0px;
+    height: 10px;
+    width: 5px;
+    background: #fff;
+}
+
+.bit-bottom-left-2 {
+    position: absolute;
+    bottom: 0%;
+    left: 0px;
+    height: 5px;
+    width: 10px;
+    background: #fff;
+}
+
+.bit-bottom-right {
+    position: absolute;
+    bottom: 0%;
+    right: 0px;
+    height: 5px;
+    width: 10px;
+    background: #fff;
+}
+
+.bit-bottom-right-2 {
+    position: absolute;
+    bottom: 0%;
+    right: 0px;
+    height: 10px;
+    width: 5px;
+    background: #fff;
+}
+
+.blur {
+    position: absolute;
+    color: #fefefe;
+    font-family: 'Overpass', sans-serif;
+    font-size: 64px;
+    letter-spacing: 20px;
+    margin: auto;
+    width: 100%;
+    filter: blur(5px);
+    cursor: none;
+    overflow: hidden;
+    text-align: center;
+    z-index: 3;
+}
+
+.focus {
+    position: absolute;
+    color: #fefefe;
+    font-family: 'Overpass', sans-serif;
+    font-size: 64px;
+    letter-spacing: 20px;
+    margin: auto;
+    width: 100%;
+    filter: blur(0px);
+    cursor: none;
+    overflow: hidden;
+    text-align: center;
+    z-index: 2;
+}
+
+.container {
+    position: absolute;
+    height: 50vh;
+    padding-top: 10vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+
+.active_menulink{
+    background-color: var(--green-accent);
+    opacity: 0.8;
+}
+
+
+
+/******* MAIN - CONTAINER *******/
+.main_main{
+    height: 70%;
+    width: 80%;
+    background-color: white;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    cursor: default;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+}
+
+
+
+
+/***********INTERNSHIP*************/
+main .internship_section{
+    height: 100%;
+}
+
+.internship_section{
+    letter-spacing: 1px;
+    padding: 40px;
+    font-family: var(--normal-fontfamily);
+}
+
+
+.internship_section h1, .scroll_semesters h1{
+    padding-top: 5px;
+    color: var(--blue-accent);
+    font-family: var(--header-fontfamily);
+    letter-spacing: 3px;
+}
+
+.internship_section h1:nth-child(1){
+    font-size: 1.3em;
+    color: var(--green-accent);
+}
+
+.internship_4thspan{
+    color: var(--red-accent);
+}
+
+
+
+/******** EXAMS **********/
+.exams_flex{
+    display: flex;
+    flex-direction: row;
+    overflow-y: scroll;
+}
+
+.exams_navigation{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+}
+
+
+#nav_categories{
+    width: 15%;
+}
+
+#nav_categories > ul > li > a{
+    color: black;
+    text-decoration: none;
+    font-family: 'Overpass Mono', monospace;
+    background-color: var(--green-accent);
+   padding: 10px;
+    margin-bottom: 20px;
+}
+
+#nav_categories>ul{
+    list-style-type: none;
+    margin-top: 50px;
+}
+
+#nav_categories a[href="#"] {
+    color: #60c4a5;
+}
+#nav_categories a:hover{
+    background-color: var(--red-accent);
+}
+
+/*incerc**/
+.main_frame{
+   display: inline-block;
+    /*position: fixed;*/
+    top: 25px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80vw;
+    height: 75vh;
+    margin: auto;
+    background-color: #303030;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.scroll_semesters{
+    width: 60%;
+    margin-left: 100px;
+    font-family: var(--normal-fontfamily);
+    letter-spacing: 1px;
+}
+
+.iwantpadding{
+    padding-bottom: 20px;
+}
+
+h2{
+    font-family: var(--header-fontfamily);
+    letter-spacing: 3px;
+    font-size: 1.3em;
+    color: var(--green-accent);
+}
+
+.ects_points{
+    color: var(--red-accent);
+}
+
+
+
+
+
+
+/******** CORE AREAS *******/
+
+.core_areas li{
+    width: 100%;
+}
+
+
+#titleprogramme{
+    color: var(--red-accent);
+    font-size: 1.5em;
+}
+
+#overviewimg{
+    width: 100%;
+}
