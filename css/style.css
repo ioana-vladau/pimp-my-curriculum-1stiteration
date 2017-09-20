@@ -176,9 +176,7 @@ body#landing_page {
 }
 
 .blackbackground{
-    background-image: url(../img/andrew-ridley-76547.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-color:black;
 }
 
 main {
