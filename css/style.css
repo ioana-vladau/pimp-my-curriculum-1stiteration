@@ -167,7 +167,7 @@ nav a{
 
 body#landing_page {
     overflow: hidden;
-    background-image: url(../img/darker.jpg);
+    background-color:black;
     background-size: 100%;
     background-repeat: no-repeat;
     margin: 0;
